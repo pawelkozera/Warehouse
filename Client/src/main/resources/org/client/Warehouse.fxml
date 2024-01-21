@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="570.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.client.Warehouse.WarehouseStageController">
+  <tabs>
+    <Tab fx:id="releaseTab" onSelectionChanged="#onReleaseTabClick" text="Wydaj towar">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="nameRlTextField" editable="false" layoutX="140.0" layoutY="171.0" />
+                  <TableView fx:id="releaseTabView" layoutX="102.0" layoutY="250.0" prefHeight="200.0" prefWidth="596.0">
+                    <columns>
+                      <TableColumn fx:id="idRlColumn" prefWidth="68.0" text="ID" />
+                      <TableColumn fx:id="nameRlColumn" prefWidth="183.0" text="Nazwa" />
+                        <TableColumn fx:id="producerRlColumn" prefWidth="204.0" text="Producent" />
+                        <TableColumn fx:id="numberRlColumn" prefWidth="75.0" text="Ilość" />
+                        <TableColumn fx:id="deleteRlColumn" prefWidth="65.0" text="Usuń" />
+                    </columns>
+                  </TableView>
+                  <ChoiceBox fx:id="commodityRlChoice" layoutX="159.0" layoutY="95.0" prefHeight="25.0" prefWidth="235.0" />
+                  <Text layoutX="238.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz towar" />
+                  <Text layoutX="141.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa" />
+                  <TextField fx:id="categoryRlTextField" editable="false" layoutX="306.0" layoutY="171.0" />
+                  <Text layoutX="306.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kategoria" />
+                  <TextField fx:id="producerRlTextField" editable="false" layoutX="472.0" layoutY="171.0" />
+                  <Text layoutX="472.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producent" />
+                  <TextField fx:id="numberRlTextField" layoutX="637.0" layoutY="171.0" />
+                  <Text layoutX="637.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość" />
+                  <Button fx:id="addPositionRlButton" layoutX="283.0" layoutY="211.0" mnemonicParsing="false" onAction="#onClickAddPositionRlButton" prefHeight="25.0" prefWidth="111.0" text="Dodaj pozycję" />
+                  <Button fx:id="acceptRlButton" layoutX="288.0" layoutY="462.0" mnemonicParsing="false" onAction="#onClickAcceptRlButton" prefHeight="58.0" prefWidth="225.0" text="Zatwierdź" />
+                  <Button fx:id="clearTableRlButton" layoutX="410.0" layoutY="211.0" mnemonicParsing="false" onAction="#onClickClearTableRlButton" prefHeight="25.0" prefWidth="111.0" text="Wyczyść tabelę" />
+                  <TextField fx:id="dateReleaseTextField" disable="true" editable="false" layoutX="607.0" layoutY="22.0" />
+                  <Text layoutX="606.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" />
+                  <TextField fx:id="idRLPersonTextField" disable="true" editable="false" layoutX="444.0" layoutY="22.0" />
+                  <Text layoutX="445.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID osoby wydającej" />
+                  <ChoiceBox fx:id="invoiceRlChoice" layoutX="411.0" layoutY="95.0" prefHeight="25.0" prefWidth="235.0" />
+                  <Text layoutX="490.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz fakture" />
+                  <TextField fx:id="idRlTextField" editable="false" layoutX="23.0" layoutY="171.0" prefHeight="25.0" prefWidth="95.0" />
+                  <Text layoutX="23.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="receptionTab" onSelectionChanged="#onReceptionTabClick" text="Przyjmij towar">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="664.0">
+               <children>
+                  <ChoiceBox fx:id="commodityReChoice" layoutX="272.0" layoutY="95.0" prefHeight="25.0" prefWidth="277.0" />
+                  <TableView fx:id="receptionTabView" layoutX="102.0" layoutY="252.0" prefHeight="200.0" prefWidth="596.0">
+                     <columns>
+                        <TableColumn fx:id="idReColumn" prefWidth="59.0" text="ID" />
+                        <TableColumn fx:id="nameReColumn" prefWidth="202.0" text="Nazwa" />
+                        <TableColumn fx:id="producerReColumn" prefWidth="196.0" text="Producent" />
+                        <TableColumn fx:id="numberReColumn" prefWidth="70.0" text="Ilość" />
+                        <TableColumn fx:id="deleteReColumn" prefWidth="68.0" text="Usuń" />
+                     </columns>
+                  </TableView>
+                  <Text layoutX="372.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wybierz towar" />
+                  <Button fx:id="acceptReButton" layoutX="288.0" layoutY="463.0" mnemonicParsing="false" onAction="#onClickAcceptReButton" prefHeight="58.0" prefWidth="225.0" text="Zatwierdź" />
+                  <TextField fx:id="idRePersonTextField" disable="true" layoutX="444.0" layoutY="22.0" />
+                  <TextField fx:id="dateReceptionTextField" disable="true" layoutX="607.0" layoutY="22.0" />
+                  <Text layoutX="444.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID osoby przyjmującej" />
+                  <Text layoutX="607.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" />
+                  <TextField fx:id="nameReTextField" editable="false" layoutX="140.0" layoutY="171.0" />
+                  <TextField fx:id="categoryReTextField" editable="false" layoutX="306.0" layoutY="171.0" />
+                  <TextField fx:id="producerReTextField" editable="false" layoutX="472.0" layoutY="171.0" />
+                  <TextField fx:id="numberReTextField" layoutX="637.0" layoutY="171.0" />
+                  <Text layoutX="141.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa" />
+                  <Text layoutX="306.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kategoria" />
+                  <Text layoutX="472.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Producent" />
+                  <Text layoutX="637.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ilość" />
+                  <Button fx:id="addPositionReButton" layoutX="283.0" layoutY="211.0" mnemonicParsing="false" onAction="#onClickAddPositionReButton" prefHeight="25.0" prefWidth="111.0" text="Dodaj pozycję" />
+                  <Button fx:id="clearTableReButton" layoutX="410.0" layoutY="211.0" mnemonicParsing="false" onAction="#onClickClearTableReButton" prefHeight="25.0" prefWidth="111.0" text="Wyczyść tabelę" />
+                  <TextField fx:id="idReTextField" editable="false" layoutX="23.0" layoutY="171.0" prefHeight="25.0" prefWidth="95.0" />
+                  <Text layoutX="23.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="14.607421875" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="warehouseStatusTab" onSelectionChanged="#onWarehouseStatusTabClick" text="Stan magazynu">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="allTabView" layoutX="12.0" layoutY="19.0" prefHeight="506.0" prefWidth="775.0">
+                    <columns>
+                      <TableColumn fx:id="idAllColumn" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="nameAllColumn" prefWidth="147.20001220703125" text="Nazwa Towaru" />
+                        <TableColumn fx:id="categoryAllColumn" minWidth="3.20001220703125" prefWidth="171.20001220703125" text="Kategoria" />
+                        <TableColumn fx:id="producerAllColumn" minWidth="0.0" prefWidth="156.79998779296875" text="Producent" />
+                        <TableColumn fx:id="quantityAllColumn" prefWidth="118.39996337890625" text="Ilość w magazynie" />
+                        <TableColumn fx:id="priceAllColumn" prefWidth="104.800048828125" text="Cena (szt/kg)" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

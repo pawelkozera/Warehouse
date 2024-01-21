@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="493.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.client.Authorization.LoginScreenController">
+   <children>
+      <Text fx:id="errorMessage" layoutX="137.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="219.0" />
+      <Button fx:id="loginButton" layoutX="137.0" layoutY="215.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="97.0" text="Zaloguj" />
+      <Button fx:id="clearButton" layoutX="259.0" layoutY="215.0" mnemonicParsing="false" onAction="#clear" prefHeight="25.0" prefWidth="97.0" text="Wyczyść" />
+      <PasswordField fx:id="passwordField" layoutX="137.0" layoutY="145.0" prefHeight="25.0" prefWidth="219.0" />
+      <TextField fx:id="loginField" layoutX="137.0" layoutY="90.0" prefHeight="25.0" prefWidth="219.0" />
+      <Text layoutX="137.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Numer identyfikacyjny pracownika:" />
+      <Text layoutX="137.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hasło:" />
+      <Text layoutX="125.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zaloguj się do systemu">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
