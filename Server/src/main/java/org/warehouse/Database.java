@@ -580,8 +580,6 @@ public class Database {
         }
     }
 
-
-
     public boolean updateSubstractStockQuantity(CommodityRelease commodityRelease) {
         try {
             String updateQuantity;
@@ -631,6 +629,7 @@ public class Database {
             statement.setString(2, commodityRelease.releaseId());
 
             int rowsAffected = statement.executeUpdate();
+
             return rowsAffected > 0;
 
         } catch (Exception e) {
@@ -840,5 +839,39 @@ public class Database {
 
     public Connection getConnection() {
         return connection;
+    }
+
+    public boolean addTestCommodity(Commodity commodity) {
+        try {
+            String insertEmployee = "INSERT INTO commodity (id, name, category, producer, quantity_stock, quantity_to_sell, price) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+            PreparedStatement statementEmployee = connection.prepareStatement(insertEmployee);
+
+            statementEmployee.setInt(1, Integer.parseInt(commodity.id()));
+            statementEmployee.setString(2, commodity.productName());
+            statementEmployee.setString(3, commodity.category());
+            statementEmployee.setString(4, commodity.producer());
+            statementEmployee.setInt(5, Integer.parseInt(commodity.quantityInStock()));
+            statementEmployee.setInt(6, Integer.parseInt(commodity.quantityToSell()));
+            statementEmployee.setFloat(7, Float.parseFloat(commodity.price()));
+
+            statementEmployee.executeUpdate();
+
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Adding a new commodity failed.");
+            e.printStackTrace();
+            return false;
+        }
+        catch (NullPointerException e) {
+            System.out.println("NullPointerException during commodity update. Check for null values.");
+            e.printStackTrace();
+            return false;
+        } catch (Exception e) {
+            System.out.println("Updating commodity failed due to an unexpected error.");
+            e.printStackTrace();
+            return false;
+        }
     }
 }
